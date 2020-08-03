@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="memberData"
+            type="com.companyview.presentation.data.MemberData" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/name_constraint"
+            style="@style/ConstraintMatchWrap"
+            android:layout_margin="@dimen/margin_10">
+
+            <LinearLayout
+                android:id="@+id/linear_name"
+                style="@style/ConstraintMatchWrap"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/ConstraintZeroMatch"
+                    android:layout_weight="1"
+                    android:text="@string/member_name" />
+
+                <TextView
+                    style="@style/ConstraintZeroMatch"
+                    android:layout_weight="4"
+                    android:text="@{memberData.memberNameData.memberFirstName+` `+memberData.memberNameData.memberLastName}"
+                    tools:text="@string/member_name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_age"
+                style="@style/ConstraintMatchWrap"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linear_name">
+
+                <TextView
+                    style="@style/ConstraintZeroMatch"
+                    android:layout_weight="1"
+                    android:text="@string/member_age" />
+
+                <TextView
+                    style="@style/ConstraintZeroMatch"
+                    android:layout_weight="4"
+                    android:text="@{String.valueOf(memberData.memberAge)}"
+                    tools:text="@string/member_age" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_phone"
+                style="@style/ConstraintMatchWrap"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linear_age">
+
+                <TextView
+                    style="@style/ConstraintZeroMatch"
+                    android:layout_weight="1"
+                    android:text="@string/member_phone" />
+
+                <TextView
+                    style="@style/ConstraintZeroMatch"
+                    android:layout_weight="4"
+                    android:text="@{memberData.memberPhone}"
+                    tools:text="@string/member_phone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_email"
+                style="@style/ConstraintMatchWrap"
+                android:layout_marginTop="@dimen/margin_10"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linear_phone">
+
+                <TextView
+                    style="@style/ConstraintZeroMatch"
+                    android:layout_weight="1"
+                    android:text="@string/member_email" />
+
+                <TextView
+                    style="@style/ConstraintZeroMatch"
+                    android:layout_weight="3.5"
+                    android:text="@{memberData.memberEmail}"
+                    tools:text="@string/member_email" />
+
+                <ImageView
+                    android:id="@+id/member_favorite"
+                    style="@style/ConstraintZeroMatch"
+                    android:layout_weight="0.5"
+                    android:backgroundTint="@color/favoriteTint"
+                    app:imageFavorite="@{memberData.isFavorite}"
+                    tools:src="@drawable/ic_favorite_border_24px" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
