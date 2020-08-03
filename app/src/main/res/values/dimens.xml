@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zero_dp">0dp</dimen>
+    <dimen name="dimen_5">5dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+
+    <fraction name="image_sort_width_percent">0.05</fraction>
+    <fraction name="image_sort_height_percent">0.06</fraction>
+    <fraction name="image_favorite_width_height_percent">0.1</fraction>
+    <fraction name="spinner_width_percent">0.4</fraction>
+    <fraction name="search_view_width_percent">0.5</fraction>
+    <fraction name="company_txt_width_percent">0.8</fraction>
+    <fraction name="frame_height_percent">0.92</fraction>
+
+    <dimen name="text_size_12">12sp</dimen>
+
+</resources>

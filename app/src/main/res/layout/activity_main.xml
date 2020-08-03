@@ -1,18 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    style="@style/ConstraintMatchMatch"
+    tools:context=".presentation.ui.activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+   <androidx.appcompat.widget.SearchView
+       android:id="@+id/data_search_view"
+       android:layout_width="@dimen/zero_dp"
+       android:layout_height="wrap_content"
+       app:queryHint="Search by name"
+       android:iconifiedByDefault="false"
+       app:layout_constraintWidth_percent="@fraction/search_view_width_percent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent">
+      <requestFocus/>
+   </androidx.appcompat.widget.SearchView>
+
+   <ImageView
+       android:id="@+id/data_sort_view"
+       style="@style/constraintZero"
+       android:src="@drawable/ic_sort"
+       app:layout_constraintWidth_percent="@fraction/image_sort_width_percent"
+       app:layout_constraintHeight_percent="@fraction/image_sort_height_percent"
+       app:layout_constraintEnd_toEndOf="parent"
+       android:layout_marginRight="@dimen/margin_30"
+       android:layout_marginEnd="@dimen/margin_30"
+       app:layout_constraintStart_toEndOf="@+id/member_sort_spinner"
+       app:layout_constraintTop_toTopOf="@id/data_search_view"
+       app:layout_constraintBottom_toBottomOf="@+id/data_search_view"
+       />
+
+   <Spinner
+       android:id="@+id/member_sort_spinner"
+       android:layout_width="@dimen/zero_dp"
+       android:layout_height="wrap_content"
+       android:visibility="invisible"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintWidth_percent="@fraction/spinner_width_percent"
+       app:layout_constraintStart_toEndOf="@+id/data_search_view"
+       app:layout_constraintEnd_toStartOf="@+id/data_sort_view"
+       app:layout_constraintTop_toTopOf="@id/data_search_view"
+       app:layout_constraintBottom_toBottomOf="@+id/data_search_view"/>
+
+   <FrameLayout
+       android:id="@+id/main_frame"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/zero_dp"
+       app:layout_constraintHeight_percent="@fraction/frame_height_percent"
+       app:layout_constraintTop_toBottomOf="@+id/data_search_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
